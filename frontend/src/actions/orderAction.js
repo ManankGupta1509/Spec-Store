@@ -39,6 +39,7 @@ export const createOrder = (order) => async (dispatch) => {
     dispatch({
       type: CREATE_ORDER_FAIL,
       payload: error.response.data.message,
+      message:error.response.data.message,
     });
   }
 };
