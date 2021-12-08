@@ -25,24 +25,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     paidAt: Date.now(),
     user: req.user._id,
   });
-
- /* const message = `Your order of ${order.orderItems} has been Placed Succesfully. \n\n Order Wiil Be Delivered Soon at ${order.shippingInfo}. \n\n Thank You`;
-
-  try {
-    await sendEmail({
-      email: order.shippingInfo.email,
-      subject: `Spec-Store Order Placed SuccessFully`,
-      message,
-    });
-
-    res.status(200).json({
-      success: true,
-      message: `Email sent to ${order.shippingInfo.emaill} successfully`,
-    });
-  } catch (error) {
-    return next(new ErrorHander(error.message, 500));
-  }
-*/
+  
   res.status(201).json({
     success: true,
     order,
